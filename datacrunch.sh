@@ -5,9 +5,9 @@ pip install -q opencv-python
 pip install -q tensorflow==2.6.0rc0
 pip install -q tensorflow_datasets tensorflow_addons
 pip install -q tensorflow_text==2.6.0rc0
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.clo>
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 sudo apt-get install -y apt-transport-https ca-certificates gnupg
-curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --key>
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 sudo apt-get update && sudo apt-get install -y google-cloud-sdk
 gsutil cp gs://bucket-eu-colab/data/ml_opus/en_ru/vocabs/ru_vocab.txt /home/user/
 gsutil cp gs://bucket-eu-colab/data/ml_opus/en_ru/vocabs/en_vocab.txt /home/user/
